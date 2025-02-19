@@ -1,0 +1,36 @@
+/* Sidebar container */
+.sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50px;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+/* Sidebar links */
+.sidenav a {
+    text-decoration: none;
+    padding: 15px;
+    width: 50px;
+    display: block;
+    color: white;
+    text-align: left;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Colors */
+.green { background-color: #008040; }
+.blue { background-color: #007BFF; }
+.red { background-color: #DC3545; }
+.gray { background-color: #6C757D; }
+
+/* Hover effect */
+.sidenav a:hover {
+    width: 150px;
+}

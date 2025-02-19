@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-12</title>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <label for="hobbies">Hobbies:</label><br>
+        <input type="text" id="hobbies" name="hobbies"><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const hobbies = document.getElementById('hobbies').value;
+
+            if (!name || !email || !password || !hobbies) {
+                alert('All fields are required');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

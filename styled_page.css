@@ -1,0 +1,52 @@
+/* Apply general styling */
+body {
+    background-color: #D6D64A;
+    font-family: "Georgia", serif;
+    margin: 40px;
+    color: #5D005D;
+}
+
+/* Container holding sidebar and content */
+.container {
+    display: flex;
+    max-width: 800px;
+    border: 1px dashed black;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 150px;
+    padding-right: 20px;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    width: 120px;
+    padding: 10px;
+    background-color: white;
+    text-decoration: none;
+    color: blue;
+    border-right: 30px solid black;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Content Styling */
+.content {
+    flex-grow: 1;
+}
+
+/* Heading */
+h1 {
+    font-size: 2em;
+    color: #880088;
+    font-weight: bold;
+}
+
+/* Italicized Footer */
+i {
+    font-size: 1em;
+    color: #660066;
+}
