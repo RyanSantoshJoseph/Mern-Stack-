@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        input, textarea {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        .error-border {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Task-5</h2>
+
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+        <br>
+
+        <label for="website">Website:</label>
+        <input type="text" id="website">
+        <span class="error" id="websiteError"></span>
+        <br>
+
+        <label for="message">Message:</label>
+        <textarea id="message"></textarea>
+        <span class="error" id="messageError"></span>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            let isValid = true;
+
+            // Name validation
+            let name = document.getElementById("name");
+            let nameError = document.getElementById("nameError");
+            if (name.value.trim() === "") {
+                name.classList.add("error-border");
+                nameError.textContent = "This field is required";
+                isValid = false;
+            } else {
+                name.classList.remove("error-border");
+                nameError.textContent = "";
+            }
+
+            // Email validation
+            let email = document.getElementById("email");
+            let emailError = document.getElementById("emailError");
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email.value.trim())) {
+                email.classList.add("error-border");
+                emailError.textContent = "A valid email address is required";
+                isValid = false;
+            } else {
+                email.classList.remove("error-border");
+                emailError.textContent = "";
+            }
+
+            // Website validation
+            let website = document.getElementById("website");
+            let websiteError = document.getElementById("websiteError");
+            let websitePattern = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\/?$/;
+            if (!websitePattern.test(website.value.trim())) {
+                website.classList.add("error-border");
+                websiteError.textContent = "A valid URL is required";
+                isValid = false;
+            } else {
+                website.classList.remove("error-border");
+                websiteError.textContent = "";
+            }
+
+            // Message validation
+            let message = document.getElementById("message");
+            let messageError = document.getElementById("messageError");
+            if (message.value.trim() === "") {
+                message.classList.add("error-border");
+                messageError.textContent = "This field is required";
+                isValid = false;
+            } else {
+                message.classList.remove("error-border");
+                messageError.textContent = "";
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+        });
+    </script>
+
+</body>
+</html>
